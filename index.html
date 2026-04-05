@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Doctor Today - Emergency Department</title>
+<style>
+  /* إعدادات الجسم */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+  }
+  /* حاوية المحتوى */
+  .container {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    overflow-wrap: break-word;
+  }
+  /* عنوان الصفحة مخفي لأنه غير مطلوب */
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+  }
+  /* معلومات الطبيب */
+  .doctor-info {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    background-color: #222;
+  }
+  /* عناصر المعلومات */
+  .info-item {
+    margin: 15px 0;
+    font-size: 1.9em;
+    word-wrap: break-word;
+  }
+  /* زر الاتصال */
+  #callButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+  #callButton:hover {
+    background-color: #0099cc;
+  }
+  #doctorName{
+    font: 150px;
+  }
+  /* استجابة النصوص */
+  @media (max-width: 400px) {
+    .info-item {
+      font-size: 1em;
+    }
+    #callButton {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="doctorContainer">
+  <h1>اطباء قسم الطوارئ</h1>
+  <div class="doctor-info" id="doctorInfo">
+    <div class="info-item" id="doctorName"></div>
+    <div class="info-item" id="doctorSpecialty"></div>
+    <div class="info-item" id="doctorTime"></div>
+    <div class="info-item" id="doctorDate"></div>
+    <div class="info-item" id="doctorPhone"></div>
+    <!-- زر الاتصال -->
+    <a href="#" id="callButton">اتصل الآن</a>
+  </div>
+</div>
+
+<script>
+  // قائمة الأطباء مع إضافة تاريخ ووقت التواجد
+  const doctors = [
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-20:00",
+      workDate: "2026-04-05",
+      phone: "07705577987"
+    },
+    {
+      name: "Dr. Fatima Ali",
+      specialty: "Pediatrics",
+      department: "Emergency",
+      workTime: "14:00-20:00",
+      workDate: "2024-04-28",
+      phone: "0500000002"
+    },
+  ];
+
+  function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const date = now.toISOString().split('T')[0]; // التاريخ الحالي
+    return { hours, minutes, date };
+  }
+
+  function isOnDuty(doctor) {
+    const current = getCurrentTime();
+    if (doctor.workDate !== current.date) {
+      return false;
+    }
+    const [start, end] = doctor.workTime.split("-");
+    const [startH, startM] = start.split(":").map(Number);
+    const [endH, endM] = end.split(":").map(Number);
+    const currentMinutes = current.hours * 60 + current.minutes;
+    const startMinutes = startH * 60 + startM;
+    const endMinutes = endH * 60 + endM;
+    return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
+  }
+
+  function displayDoctor() {
+    const department = "Emergency";
+    const currentDoctors = doctors.filter(doc => doc.department === department && isOnDuty(doc));
+    const nameElem = document.getElementById("doctorName");
+    const specialtyElem = document.getElementById("doctorSpecialty");
+    const timeElem = document.getElementById("doctorTime");
+    const dateElem = document.getElementById("doctorDate");
+    const phoneElem = document.getElementById("doctorPhone");
+    const callBtn = document.getElementById("callButton");
+
+    if (currentDoctors.length > 0) {
+      const doctor = currentDoctors[0];
+      nameElem.innerHTML = `${doctor.name}`;
+      specialtyElem.innerHTML = `${doctor.specialty}`;
+      timeElem.innerHTML = `${doctor.workTime}`;
+      dateElem.innerHTML = `${doctor.workDate}`;
+      phoneElem.innerHTML = `${doctor.phone}`;
+
+      // عرض المعلومات بشكل دائم
+      nameElem.style.display = "block";
+      specialtyElem.style.display = "block";
+      timeElem.style.display = "block";
+      dateElem.style.display = "block";
+      phoneElem.style.display = "block";
+
+      // تحديث زر الاتصال برقم الهاتف
+      callBtn.href = `tel:${doctor.phone}`;
+      callBtn.style.display = "inline-block";
+    } else {
+      // إخفاء المعلومات إذا لم يوجد طبيب
+      nameElem.style.display = "none";
+      specialtyElem.style.display = "none";
+      timeElem.style.display = "none";
+      dateElem.style.display = "none";
+      phoneElem.style.display = "none";
+      // إخفاء زر الاتصال
+      document.getElementById("callButton").style.display = "none";
+    }
+  }
+
+  // عرض الطبيب عند تحميل الصفحة
+  displayDoctor();
+
+  // تحديث كل دقيقتين
+  setInterval(displayDoctor, 120000);
+</script>
+
+</body>
+</html>
