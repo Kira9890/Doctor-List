@@ -114,20 +114,420 @@
 <script>
   // قائمة الأطباء مع إضافة تاريخ ووقت التواجد
   const doctors = [
+    //قائمة دكتور حسين حسون
     {
       name: "د. حسين حسون",
       specialty: "طبيب مقيم دوري",
       department: "Emergency",
-      workTime: "08:00-20:00",
+      workTime: "16:00-24:00",
       workDate: "2026-04-05",
-      phone: "07705577987"
+      phone: "+964 774 1980 542"
     },
     {
-      name: "Dr. Fatima Ali",
-      specialty: "Pediatrics",
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
       department: "Emergency",
-      workTime: "14:00-20:00",
-      workDate: "2024-04-28",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-09",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-11",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-13",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-15",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-17",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-18:00",
+      workDate: "2026-04-18",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-19",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-23",
+      phone: "+964 774 1980 542"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-25",
+      phone: "0500000002"
+    },
+    {
+      name: "د. حسين حسون",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-27",
+      phone: "+964 774 1980 542"
+    },
+
+
+
+    // قائمة دكتور عبداللطيف
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-06",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-07",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-14:00",
+      workDate: "2026-04-08",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-14:00",
+      workDate: "2026-04-09",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-10",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-12",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-13",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-14",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-15",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-16",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-17",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-19",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-20",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-21",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-22",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-23",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-24",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-26",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-27",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-28",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-29",
+      phone: "+964 788 7795 933"
+    },
+    {
+      name: "د. عبداللطيف حسين علي",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-30",
+      phone: "+964 788 7795 933"
+    },
+
+
+    // قائمة الدكتور علي يوسف
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-06",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-07",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-08",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-10",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-11",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-12",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-14",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-16",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-18",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-20",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-21",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-22",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-24",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "08:00-16:00",
+      workDate: "2026-04-25",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-26",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-28",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-29",
+      phone: "0500000002"
+    },
+    {
+      name: "د. علي يوسف",
+      specialty: "طبيب مقيم دوري",
+      department: "Emergency",
+      workTime: "16:00-24:00",
+      workDate: "2026-04-30",
       phone: "0500000002"
     },
   ];
